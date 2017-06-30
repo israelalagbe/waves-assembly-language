@@ -1,0 +1,36 @@
+"ADD"                 return 'ADD_OP';
+"SUB"                   return 'SUB_OP';
+"MUL"                 return 'MUL_OP';
+"DIV"                 return 'DIV_OP';
+"LOAD"                 return 'LOAD_OP';/*Load [memory location], destination register*/
+"SYSTEM"                 return 'SYSTEM_OP';/*Call a built in routine*/
+"CALL"                 return 'CALL_OP';/*Call a given routine*/
+"RESULT"                return 'RESULT_OP';/*Move result of function call to register*/
+"RETURN"                return 'RETURN_OP';/*Return from a called function*/
+"MOVE"                 return 'MOVE_OP';/*move %sourceRegister to %destinationRegister*/
+"ICONST"                 return 'ICONST_OP';/*Integer constant*/
+"GOTO"                 return 'GOTO_OP';/*Goto a specific instruction*/
+"GET"                 return 'GET_OP';/*Get the address of a constant*/
+"STORE"                 return 'STORE_OP';/*Store r1,[r0] ;  store register, [destination memory location]*/
+"IF-EQ"                 return 'IF_EQ_OP';/*If equal*/
+"IF-NEQ"                 return 'IF_NEQ_OP';/*If not equal*/
+"IF-GT"                 return 'IF_GT_OP';/*If greater than*/
+"IF-LT"                 return 'IF_LT_OP';/*If not equal to*/
+
+
+
+
+
+CheckList
+0:add,1:sub,2:mul,3:div,4:iconst,5:system,6:goto,7:call, 8:get, 9:load,11:store, 10:move, 	(check)
+
+
+
+
+12:return
+13:result
+
+14:if-eq
+15:if-neq
+16:if-gt
+17:if-lt

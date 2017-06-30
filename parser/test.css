@@ -1,0 +1,27 @@
+body,html {
+	width:100%;
+	height: 100%;
+	text-align:center;
+}
+button{
+	padding:20px 40px;
+	display:block;
+	margin:auto;
+}
+textarea{
+	width:500px;
+	height:500px;
+}
+#result{
+	color:white;
+	border-radius: 5px;
+	padding:10px;
+}
+.error{
+	background-color:rgba(225,0,0,0.8);
+	display:block !important;
+}
+.success{
+	background-color:rgba(0,0,225,0.8);
+	display:block !important;
+}

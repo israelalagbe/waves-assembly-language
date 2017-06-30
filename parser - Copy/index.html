@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parser</title>
+		<link rel='stylesheet' href="test.css" />
+		<script src='jquery.js'></script>
+		<script src='jsface.min.js'></script>
+		<script src='promise.min.js'></script>
+		<script src='FileSystem.js'></script>
+		<script src="Event.js"></script>
+		<script src="Parser.js"></script>
+		<script src='Utils.js'></script>
+		<script src='Assembler.js'></script>
+		<script src='TestEditor.js'></script>
+		<script src='App.js'></script>
+		<script src='test.js'></script>
+	</head>
+	<body>
+		<textarea id='code'>
+.data
+	.string message "hello world";
+.end data
+me:
+  add r0 r0 r1
+  </textarea>
+		<button id='compileBtn'>
+			Compile
+		</button>
+		<button id='runBtn'>
+			Run
+		</button>
+		<pre id='result' style='display:none'>
+		</pre>
+	</body>
+</html>
