@@ -13,6 +13,13 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 - **Modern UI**: Styled with Metro UI to offer an intuitive and aesthetically pleasing interface.
 - **Interactive Experience**: Compile and execute code directly from the browser.
 
+### Screenshots
+![Code Editor Screen](/screenshots/editor.png "Code Editor Screen")
+
+
+![Output Screen](/screenshots/output.png "Output Screen")
+
+
 ## Installation & Usage
 
 ### Prerequisites
@@ -23,14 +30,14 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 ### Running Locally
 
 1. Clone the repository:
-   \`\`\`sh
+   ```sh
    git clone https://github.com/israelalagbe/waves-assembly-language.git
-   \`\`\`
+   ```
 
 2. Navigate to the project directory:
-   \`\`\`sh
+   ```sh
    cd waves-assembly-language
-   \`\`\`
+   ```
 
 3. Open the project with Visual Studio Code.
 
