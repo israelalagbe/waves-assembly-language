@@ -1,0 +1,30 @@
+
+WavesFile{
+	int5 magic;
+	int2             constant_count;
+	int1             constant_info[constant_count-1];
+	int2             routine_count;
+	int1             routine_info[routine_count-1];
+}
+
+
+constant_info{
+   int1 type;//The type of the info (1:char,2 int, 3 string)
+   int2 length;//Needed for type=(3 string)
+   int2 name_index;//The index of the name of the data
+   int2 value_index;//The index for the value of the data
+}
+
+routine_info{
+	int2 length;
+	int2 name_index;//The index of the name of the routine_count
+	int2 value_index;//The index for the body of the data
+}
+TempWavesSpec{
+	int5 magic;
+	int2 constant_lenght;
+	int1 constants[];
+	int2 mainRoutineIndex;
+	int2 routines_length;
+	int1 routines[];
+}

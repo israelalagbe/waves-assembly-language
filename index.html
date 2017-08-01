@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel='stylesheet' href='css/app.css'>
+    <link rel='stylesheet' href='lib/metro/css/metro.min.css'>
+    <link rel='stylesheet' href='lib/metro/css/metro-icons.min.css'>
+    <link href="lib/metro/css/metro-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/metro/css/metro-colors.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id='loader_backdrop'>
+        <div id='loader'>
+            <img src="img/loading50.gif" />
+        </div>
+    </div>
+    <div class='window app'>
+        <div class="window-caption">
+            <span class="window-caption-icon"><span class="mif-windows"></span></span>
+            <span class="window-caption-title">Waves Assembler</span>
+        </div>
+        <div class="app-bar default" data-role="appbar" id='appbar'>
+            <ul class="app-bar-menu small-dropdown">
+                <li>
+                    <a href="" class="dropdown-toggle"><span class="icon mif-file-empty"></span> File</a>
+                    <ul class="d-menu compact" data-role="dropdown">
+                        <li><a href="" id="saveBtn">Save</a></li>
+                        <li>
+                            <a href="" class="dropdown-toggle">Examples</a>
+                            <ul class="d-menu compact" id="loadExamples" data-role="dropdown">
+                                <li><a data-name='helloworld.asm'>Hello world</a></li>
+                                <li><a data-name='arithmetic.asm'>Arithmetic</a></li>
+                                <li><a data-name='io.asm'>IO</a></li>
+                                <li><a data-name='function.asm'>Functions</a></li>
+                                <li><a data-name='loop.asm'>Loops</a></li>
+                                <li><a data-name='fizbuzz.asm'>FizzBuzz</a></li>
+                                <li><a data-name='guessing-game.asm'>Guessing Game</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dropdown-toggle"><span class="icon mif-pencil"></span> Edit</a>
+                    <!--<a href="" class="dropdown-toggle">Other Products</a>-->
+                    <ul class="d-menu" data-role="dropdown">
+                        <li>
+                            <a href="" class="dropdown-toggle">Themes</a>
+                            <ul class="d-menu themes-select" data-role="dropdown">
+                                <li><a href="" data-theme='ace/theme/monokai'>Monokai</a></li>
+                                <li><a href="" data-theme='ace/theme/eclipse'>Eclipse</a></li>
+                                <li><a href="" data-theme='ace/theme/gob'>Gob</a></li>
+                                <li><a href="" data-theme='ace/theme/dreamweaver'>Dreamweaver</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="dropdown-toggle">Build</a>
+                    <ul class="d-menu compact" data-role="dropdown">
+                        <li><a id="compileBtn">Compile</a></li>
+                        <li><a id="runBtn">Run</a></li>
+                    </ul>
+                </li>
+                <li>
+                </li>
+                <li>
+                    <a class="dropdown-toggle">Help</a>
+                    <ul class="d-menu compact" data-role="dropdown">
+                        <li><a id="aboutBtn">About</a></li>
+                        <li><a href="WAVESASSEMBLYLANGUAGEMANUAL.pdf" target="_blank">Manual(PDF)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <select class='app-bar-element' id="fontSelect">
+                        <option>10px</option>
+                        <option>11px</option>
+                        <option selected="true">12px</option>
+                        <option>14px</option>
+                        <option>16px</option>
+                        <option>18px</option>
+                        <option>20px</option>
+                        <option>22px</option>
+                        <option>24px</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="window-content" style="height: 100%">
+<pre id="editor">.data
+    .string text "Hello World"
+ .end
+ main:
+     get r0 text
+     call printStr r0
+</pre>
+        </div>
+    </div>
+    </div>
+    <div class="backdrop">
+        <!--The Output Window-->
+        <div class="window" id="console" data-role='draggable' data-drag-element='.window-caption' style="width:100%;max-width: 500px;">
+            <div class="window-caption bg-blue">
+                <span class="window-caption-icon"><span class="mif-windows"></span></span>
+                <span class="window-caption-title">file://output</span>
+                <span class="btn-min"></span>
+                <span class="btn-max"></span>
+                <span class="btn-close"></span>
+            </div>
+            <div class="window-content bg-dark fg-white" designMode="true"></div>
+        </div>
+    </div>
+    <!--For displaying the logger-->
+    <div data-role="charm" data-position="bottom" id='logger'>
+        <div id="logger_message"></div>
+    </div>
+    <div data-role="dialog" data-close-button="true" id="about">
+        <h3>About</h3>
+        <p>Designed and developed by Israel Alagbe &copy; 2017 WavesTech </p>
+        <!--<ul>
+            <li>ICONST: Used to load integer constant into register e.g iconst r0 50 or iconst r0 number</li>
+            <li>LOAD: Used to load register with a particular memory location value. Load [memory location], destination register e.g load [r0], r1</li>
+            <li>ADD: Used to add two registers e.g add r0 r1 r3</li>
+            <li>SUB: Used to substract two registers e.g sub r0 r1 r3</li>
+            <li>MUL: Used to multiply two registers e.g mul r0 r1 r3</li>
+            <li>DIV: Used to divide two registers e.g div r0 r1 r3</li>
+            <li>MOVE: USed to move value from 1 regisster to anoteher</li>
+            <li>STORE USed to move register to a particular memory location</li>
+            <li>RETURN: Used to return from a routine call</li>
+            <li>RESULT: Move result of function call to a particular register</li>
+        </ul>-->
+    </div>
+    <div data-role="dialog" data-close-button="true" id="save">
+        <h3>Successfully Saved file</h3>
+    </div>
+    <script src='lib/common/jquery-2.1.3.min.js'></script>
+    <script src="lib/ace/src-min/ace.js" charset="utf-8"></script>
+    <script src='lib/metro/js/metro.min.js'></script>
+    <script src='lib/common/promise.min.js'></script>
+    <script src='lib/common/jsface.min.js'></script>
+    <script src='lib/common/store.legacy.min.js'></script>
+    <script src='lib/common/stringview.js'></script>
+
+    <script src='js/editor.js'></script>
+    
+    <script src='js/asm/Parser.js'></script>
+    <script src='js/asm/Utils.js'></script>
+    <script src='js/FileSystem.js'></script>
+    <script src='js/asm/Assembler.js'></script>
+    <script src='js/vm/vmUtil.js'></script>
+    <script src='js/vm/VM.js'></script>
+    <script src='js/vm/OperatingSystem.js'></script>
+    <script src='js/Events.js'></script>
+    <script src='js/WavesEditor.js'></script>
+    
+    <script src='js/app.js'></script>
+    
+    <script src='js/asm/test.js'></script>
+</body>
+</html>
