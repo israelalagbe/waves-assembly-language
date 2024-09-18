@@ -62,4 +62,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-Special thanks to my college professors, peers, and everyone who contributed directly or indirectly to this intellectually stimulating project.
+Special thanks to my college lecturers, peers, and everyone who contributed directly or indirectly to this project.
