@@ -1,10 +1,7 @@
  "use strict";
  var BaseEditor = Class({
      constructor: function() {
-         //this.init();
          this._events = new Events();
-         //this._events.trigger('compileError',{str:"hello world"});
-         //this._events.bind('compileError',this.compileError);
 
      },
      compileError: function(error) {
