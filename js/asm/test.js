@@ -309,10 +309,7 @@ $(document).ready(function() {
         //Magic + constant_length+constants
         var dataLenOffSet=5+2+dataLen;
         var mainRoutineIndex=codes[dataLenOffSet+1]+codes[dataLenOffSet+2];
-        //console.log("main",mainRoutineIndex)
-        //dataOffset + mainRoutineIndex + routineLength
         var dataOffset=dataLenOffSet+2+2;
-        //console.log("data offset:",dataOffset,"Length:",codes.length);
 
         var result="";
         for (var i = dataOffset; i < codes.length;) {
@@ -332,64 +329,8 @@ $(document).ready(function() {
                 result+=operand+", ";
                 i++;
             }
-            result+='\n';
-            /*if(op_name=="RETURN_OP")
-                console.log(op_obj)
-            result+=(i++)+": "+op_name+" ";
-            for (var j=0;j<op_obj.size;j++){
-                
-                var operand=codes[i+j];
-                result+=operand+", ";
-                
-            }
-            result+='\n';
-            
-         */   
+            result+='\n'; 
         }
         console.log(result)    
-    }
-    window.decompile=decompile;
-    //testAsm.assemble("");
-    /*var a=new Promise(function(resolve,reject){
-    	setTimeout(function(){
-    		resolve("From a")
-    	},1000);
-    });
-    ;
-    //assert(testAsm.build()=="build");
-    
-    /*
-    function promiseEach(promises,fn){
-    	var promise=promises.reduce(function(initialvalue,currentValue,index,arr){
-    		return initialvalue.then(function(){
-    			return fn(currentValue);
-    		});
-    	},Promise.resolve());
-    	return promise;
-    }
-    var all=promiseEach([a,Promise.reject('from b')],function(item){
-    	return item;
-    });
-    all.then(function(res){
-    	console.log(res);
-    },function(e){
-    	console.log(e);
-    })*/
-    //Promise.race([a,b]);
-    /*var all=promiseEach([a,Promise.reject('from b')])//Promise.race([a,b]);
-    all.then(function(res){
-    	console.log(res)
-    },function(e){
-    	console.log(e)
-    })*/
-    /*
-    Reduces array into a single value
-    For array.reduce
-    The first value of the array will be the index to first be returned
-    function(total||initialvalue, currentValue,index, arr)
-    [].reduce(fn,initialValue)
-
-
-    */
-    
+    }    
 });
