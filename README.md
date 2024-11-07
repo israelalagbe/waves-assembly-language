@@ -2,6 +2,9 @@
 
 Waves Assembly Language is a web-based compiler for a unique assembly language designed and implemented from scratch. Created as a part of my final year project in college in 2017, this project showcases a blend of creativity, technical skills, and innovation.
 
+## Try it out
+Click [here](https://israelalagbe.github.io/waves-assembly-language/) to try it out yourself: https://israelalagbe.github.io/waves-assembly-language/
+
 ## Overview
 
 The compiler interprets a custom assembly language, referred to as "Waves," and translates it into executable code. It is written in JavaScript and uses various libraries, including Jison parser, Metro UI, and Ace Editor, to offer an optimal user experience.
@@ -14,6 +17,9 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 - **Interactive Experience**: Compile and execute code directly from the browser.
 
 ### Screenshots
+![Usage](https://github.com/user-attachments/assets/754cc596-7102-4342-a56d-66afc6680001)
+
+
 ![Code Editor Screen](/screenshots/editor.png "Code Editor Screen")
 
 
