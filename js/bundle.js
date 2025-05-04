@@ -3234,7 +3234,7 @@ var WavesEditor = Class(BaseEditor, {
         this._editor.getSession().setMode("ace/mode/waves");
         var self=this;
         setTimeout(function(){
-           var file=store.get('file.asm')||"main:\n\t;Your code goes here";
+           var file=store.get('file.asm')||'.data\n    .string text "Hello World"\n .end\n main:\n     get r0 text\n     call printStr r0\n';
            self._editor.session.setValue(file);
             self._events.emit('load');
         });
