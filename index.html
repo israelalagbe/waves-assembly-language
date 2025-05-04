@@ -93,8 +93,13 @@
             </ul>
         </div>
         <div class="window-content" style="height: 100%">
-            <pre id="editor">main:
-;Your code goes here</pre>
+<pre id="editor">.data
+    .string text "Hello World"
+ .end
+ main:
+     get r0 text
+     call printStr r0
+</pre>
         </div>
     </div>
     </div>
