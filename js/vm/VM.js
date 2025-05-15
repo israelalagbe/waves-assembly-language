@@ -380,6 +380,10 @@ var VM = Class(CPU, function() {
                     //this.resultValue=this.allocate_memory(args[0]);
                     break
                 }
+            case 5: { // int random() gets a random number between 1 and 100
+                this.resultValue =  Math.round(Math.random() * 100);
+                break;
+            }
             default:
                 {
                     var errMessage = "Invalid System Call Number: " + id;

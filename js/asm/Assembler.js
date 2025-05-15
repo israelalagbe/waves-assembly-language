@@ -530,6 +530,10 @@ var Assembler = function() {
                     "alloc:",
                     "system 0x3 r0",
                     "result r1",
+                    "return r1",
+                    "random:",
+                    "system 0x5 r0",
+                    "result r1",
                     "return r1"
                 ].join('\n');
              

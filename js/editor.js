@@ -101,7 +101,7 @@ define('ace/mode/waves_highlight_rules', function(require, exports, module) {
                 { token: 'entity.name.function.assembly', regex: '[\\w.]+?:$' },
                 {
                     token: 'constant.language',
-                    regex: "(printStr|alloc|printInt|printChar|newline|cls|input)"
+                    regex: "(printStr|alloc|printInt|printChar|newline|cls|input|random)"
                 },
                 { //Number
                     token: 'constant.character.decimal.assembly',
