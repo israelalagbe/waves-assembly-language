@@ -24,11 +24,7 @@ var SymbolTable = function() {
                 val+="\0";//Append a null variable to the end of the string
                 size = val.length;
             }
-            //console.error("Formal size:"+allDataSize)
             var before=allDataSize;
-            //console.error("Value:"+val)
-            //console.error("added size:"+size)
-            //console.error("Now size:"+allDataSize)
             dataTable[key] = { type: SymbolTable.TYPE_DATA, dataType: dataType, value: val, index: allDataSize,size:size,before:before };
             allDataSize += size;
         },

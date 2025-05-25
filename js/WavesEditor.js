@@ -1,4 +1,7 @@
- "use strict";
+/**
+ * @author Israel
+ */
+"use strict";
  var BaseEditor = Class({
      constructor: function() {
          this._events = new Events();
@@ -29,11 +32,6 @@
          this._events.bind('load', fn);
      }
  });
-/*
-toggleMetroCharm(el[, position]);
-showMetroCharm(el[, position]);
-hideMetroCharm(el);
-*/
  var WavesEditor = Class(BaseEditor, {
      constructor: function() {
      	var self=this;
@@ -51,15 +49,7 @@ hideMetroCharm(el);
          window.edit=this._editor;
          this._editor.setTheme("ace/theme/monokai");
          this.$logger=$("#logger");
-         /*this._events.bind('load', function(){
-         	showMetroCharm(self.$logger);
-         });*/
          
-         //this._editor.getSession().on('change', function(e) {
-         //alert(e)
-         // e.type, etc
-
-         //});
          this._editor.getSession().setMode("ace/mode/waves");
          var self=this;
          setTimeout(function(){

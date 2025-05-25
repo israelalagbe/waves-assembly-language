@@ -4,7 +4,6 @@ var Console=Class({
 		window.C=this;
 		this.$backdrop=$('.backdrop');
 		this.$content=$('#console .window-content');
-		//console.log(this.$backdrop.show())
 		this.events.bind('console.open',this.open.bind(this));
 		this.events.bind('console.show',this.show.bind(this));
 		this.events.bind('console.log',this.log.bind(this));
@@ -17,26 +16,13 @@ var Console=Class({
 		$('#console .btn-close').click(function(){
 			self.events.emit('console.close');
 		});
-		//this.$content.click(function(){
-			//self.make_editable(true);
-			//this.focus();
-			//this.blur();
-			//self.$content.trigger('blur');
-			//self.$content.attr('contenteditable',"true");
-			//elf.events.emit('console.input');
-		//})
 		this.$content.on("keypress keyup keydown paste cut",function(e){
 			self.handle_change(e);
-			//e.preventDefault();
-			//console.log(e)
 		})
 		.blur(function(){
 			self.make_editable(false);
 		})
 		;
-		//this.events.bind('console.inputFinish',function(text){
-		//	console.log("input is:",'"'+text+'"')
-		//});
 	},
 	handle_change:function(e){
 		var self=this;
@@ -49,24 +35,12 @@ var Console=Class({
 			if (changedContent.length==0) {
 				e.preventDefault();
 			}
-			//console.log(this.inputStream,this.oldInputContent)
 		}
 		else if(e.keyCode==key_enter){
-			//e.preventDefault();
-			//this.log("\n");//Add a newline manually
-			//this.make_editable(false);
 			e.preventDefault();
 			this.events.emit('console.inputFinish',[changedContent]);
 			self.make_editable(false);
 			self.log("\n");
-			//(function(){
-				//self.setCursorToEnd(self.$content.get(0));
-				
-				//self.setText(self.getText()+"\n");
-				//self.log(" ");
-				
-				//elf.$content.trigger('blur');
-			//}.debounce(20))();
 		}
 	}
 	,
@@ -80,12 +54,9 @@ var Console=Class({
 		sel.addRange(range);
 		el.focus();
 	}
-		//this.$content.
-	}
-	,
+	},
 	make_editable:function(state){
 		this.$content.attr('contenteditable',state);
-		//this.setCursorToEnd(this.$content.get(0));
 	},
 	setText:function(text){
 		this.$content.text(text);
@@ -96,22 +67,12 @@ var Console=Class({
 	,
 	log:function(text){
 
-		/*var oldText=this.$content.text();
-		if(oldText!="")
-			oldText+="\n";
-		this.$content.text(oldText+text);*/
-		//console.error(text)
-		//var oldText=this.$content.text();
-		//this.$content.text(oldText+text);
-		//console.log("logging: ",'"'+text+'"')
 		this.setText(this.getText()+text);
 	},
 	input:function(){
 		var self=this;
 			self.make_editable(true);
 		self.$content.trigger('focus');
-		//self.log("\r");
-		//self.log("");
 		self.setCursorToEnd(self.$content.get(0));
 		self.oldInputContent=self.$content.text();
 		
