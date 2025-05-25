@@ -20,18 +20,12 @@
         <div class="window-caption">
             <span class="window-caption-icon"><span class="mif-windows"></span></span>
             <span class="window-caption-title">Waves Assembler</span>
-            <span class="btn-min"></span>
-            <span class="btn-max"></span>
-            <span class="btn-close"></span>
         </div>
-        <!--<div id="log"></div>-->
         <div class="app-bar default" data-role="appbar" id='appbar'>
             <ul class="app-bar-menu small-dropdown">
                 <li>
                     <a href="" class="dropdown-toggle"><span class="icon mif-file-empty"></span> File</a>
                     <ul class="d-menu compact" data-role="dropdown">
-                        <!--<li><a href="">New</a></li>
-                        <li><a href="">Open</a></li>-->
                         <li><a href="" id="saveBtn">Save</a></li>
                         <li>
                             <a href="" class="dropdown-toggle">Examples</a>
@@ -45,7 +39,6 @@
                                 <li><a data-name='guessing-game.asm'>Guessing Game</a></li>
                             </ul>
                         </li>
-                        <li><a href="" id="closeBtn">Close</a></li>
                     </ul>
                 </li>
                 <li>
@@ -125,9 +118,6 @@
     <div data-role="dialog" data-close-button="true" id="about">
         <h3>About</h3>
         <p>Designed and developed by Israel Alagbe &copy; 2017 WavesTech </p>
-        <p>
-            Thanks for using my application. You can email israelalagbe53@gmail.com with your suggestion to make it better.
-        </p>
         <!--<ul>
             <li>ICONST: Used to load integer constant into register e.g iconst r0 50 or iconst r0 number</li>
             <li>LOAD: Used to load register with a particular instruction Load [memory location], destination register e.g load [r0], r1</li>
