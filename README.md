@@ -18,7 +18,6 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 
 ![Output Screen](/screenshots/output.png "Output Screen")
 
-
 ## Installation & Usage
 
 ### Prerequisites
@@ -40,21 +39,14 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 
 3. Install dependencies:
    ```sh
-   npm install serve
+   npm install
    ```
 
-4.  Run the project using serve:
-    ```sh
-    npm start
-    ```
-   or
-    ```sh
-    npx serve .
-    ```
-
-5. Open the project with Visual Studio Code.
-
-6. Use the Live Server extension (or your preferred local server) to launch the project.
+4. Run the project:
+   ```sh
+   npm start
+   ```
+   This will start the server on port 3000. Open your browser and navigate to `http://localhost:3000`.
 
 ### Contributing
 
@@ -62,4 +54,4 @@ If you're interested in contributing or have suggestions and ideas, feel free to
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
