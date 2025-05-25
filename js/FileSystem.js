@@ -3,8 +3,6 @@
  */
 "use strict";
 var FileSystem = Class(function() {
-    var host;
-    var cwd = 'C://';
     var obj = {
         'file1.txt': "This is content of file1",
         'file2.txt': "This is content of file2",
@@ -67,7 +65,6 @@ var FileSystem = Class(function() {
             });
             return promise;
         },
-        //Set a file system with manipulated values
         define: function(fname, value) {
             obj[fname] = value;
         }

@@ -30,10 +30,6 @@ define('ace/mode/waves', function(require, exports, module) {
                     else if(dataMatch){
                         indent +=tab
                     }
-                    /*else if(dataMatch){
-                        indent +=tab
-                        indent+="\n.end"
-                    }*/
                 }
 
                 return indent;
@@ -126,6 +122,3 @@ define('ace/mode/waves_highlight_rules', function(require, exports, module) {
 
     exports.WavesHighlightRules = WavesHighlightRules;
 });
-
-//To set the font size
-//document.getElementById('editor').style.fontSize='20px';

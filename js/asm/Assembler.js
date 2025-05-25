@@ -87,11 +87,6 @@ var Assembler = function() {
                 symbolTable.setRoutineIndex(routine_name, totalSize); //Set index of routine into the code
                 totalSize += routineSize; //Increment the total routine size
                 symbolTable.setRoutineSize(routine_name, routineSize);
-                //this.InstrBuilder.OP_MAP[name];
-                //console.log(symbolTable.getRoutine(routine_name))
-                //if(routine_name=="printStr")
-                 //   console.warn(symbolTable.getRoutineSize("printStr"))
-
             });
             resolve();
         });
@@ -131,7 +126,6 @@ var Assembler = function() {
             //Loop over the routine names to convert it to binary
             //The first routine
             var name = allRoutines[index];
-            //console.log(symbolTable.getRoutineSize(name));
             //The data of of the routine
             var routine = symbolTable.getRoutine(name);
             //The instructions in the routine
@@ -140,7 +134,6 @@ var Assembler = function() {
             instructions.forEach(function(elem, index, instructions) {
 
                 var instr = instructions[index];
-                //code=code.concat(instr);
                 var opcode = instr[0]; //First Value as opcode
                 switch (opcode) {
                     case InstrBuilder.Opcodes.ADD_OP.code:
@@ -180,7 +173,6 @@ var Assembler = function() {
                                     var start = index >> 8;
                                     var end = index & 0x00ff;
                                     code = code.concat([opcode, reg, start, end]);
-                                    //console.error(symbolTable.getAllData());
                                 } else {
                                     var error = {
                                         str: "Data does not exist",
@@ -246,7 +238,6 @@ var Assembler = function() {
                                 var start = index >> 8;
                                 var end = index & 0x00ff;
                                 code = code.concat([opcode, reg, start, end]);
-                                //console.error(symbolTable.getAllData());
                             } else {
                                 var error = {
                                     str: "Data does not exist",
@@ -307,7 +298,6 @@ var Assembler = function() {
 
             });
         });
-        //console.error(code)
         return code;
     }
 
@@ -356,9 +346,6 @@ var Assembler = function() {
             //var constant_index=constant_count-1'
             var val = allData[key];
             if (val.dataType == SymbolTable.DATA_TYPE_CHAR) {
-                //data[val.index]=val.value
-                //constant_info[constant_count-1]=val.name;
-                //.charCodeAt(0)
                 fillChar(data, val.value, val.index);
                 dataBytesCount += 1;
             } else if (val.dataType == SymbolTable.DATA_TYPE_INT) {
@@ -462,7 +449,6 @@ var Assembler = function() {
             var input = this.parser.parse(source);
             var done_including = false;
             for (var index = 0; index < input.length; index++) {
-                //console.log(input[index]);
                 switch (input[index].type) {
 
                     case 'data_block':
@@ -492,12 +478,6 @@ var Assembler = function() {
             var promise = promiseEach(promises, function(item) {
                 return item;
             });
-            /*.then(function(){
-
-                        },function(){
-
-                        })*/
-            ;
 
             return promise;
         },
@@ -554,7 +534,6 @@ var Assembler = function() {
                     }).catch(function(e) {
                         reject(e);
                     });
-                    //resolve(result);
                 } catch (e) {
                     reject(e);
                 }

@@ -1,0 +1,23 @@
+{
+  "name": "waves-assembler",
+  "version": "1.0.0",
+  "description": "a web-based compiler for a unique assembly language designed",
+  "main": "index.html",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "serve -l 3000 -s .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://israelalagbe.github.io/waves-assembly-language/"
+  },
+  "author": "Israel Alagbe",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -24,7 +24,6 @@ var CPU = Class(Memory, function() {
     function runCycle() {
         var self = this;
         var code = this.nextOpcode();
-        //console.error(code >> 8);
         switch (code >> 8) { //Opcode
             case OP.add:
                 {
@@ -128,7 +127,6 @@ var CPU = Class(Memory, function() {
                     var a = code & 0xff;
                     code = this.nextOpcode();
                     var addr = (a << 8) | (code >> 8); //The address of the routine
-                    //console.log("call",addr)
                     var b = code & 0xff;
                     code = this.nextOpcode();
                     var regRange = (b << 8) | (code >> 8); //The register range
@@ -168,8 +166,6 @@ var CPU = Class(Memory, function() {
                         } while (index <= regEnd);
                     }
                     this.callSystemRoutine(systemRoutineCode, args);
-                    //this.events.emit('console.log', [args.toString()])
-                    //this.events.emit('console.log',[args])
                     break;
                 }
             case OP.get:
@@ -251,7 +247,6 @@ var VM = Class(CPU, function() {
         this.registers = null;
         this.pc = 0;
         this.max_pc = 0;
-        //this.max_stack = max_stack || 0xffff;
         this.max_stack = 1000;
         this.fp = 0; //Stack frame pointer
         this.pendingIO = false;
@@ -282,19 +277,13 @@ var VM = Class(CPU, function() {
             var item=this.constantTable[i];
             self.memory[i] = item;
         }
-       /*     console.log(this.constantTable.byteLength)
-        this.constantTable.map(function(item, index, arr) {
-            self.memory[index] = item;
-        });*/
         this.heap_start = this.constantTable.length;
         this.heap_stop = this.heap_start;
         console.log("heap_start", this.heap_start);
         this.memory_offset = (this.constantTable.byteLength - 1);
         this.inputStreamLength = 100;
         this.inputStreamPointer = this.allocate_memory(this.inputStreamLength);
-        //console.clear();
         console.log(new Uint8Array(this.code.buffer, this.code.byteOffset));
-        //console.log(this.registers);
     }
 
     function run(buffer) {
@@ -317,14 +306,11 @@ var VM = Class(CPU, function() {
                         runCycle();
                     else
                         self.stop();
-                    //self.requestAnimFrame(runCycle);
                 } catch (e) {
                     console.error(e);
                     self.events.emit('console.log',[e]);
                     self.stop();
                 }
-                //else
-                //self.stop();
             }, timeout);
 
 

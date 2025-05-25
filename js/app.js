@@ -2,7 +2,6 @@
  * @author Israel
  */
 "use strict";
-//require('hello')
 Class(function() {
     var assembler;
     var editor;
@@ -24,15 +23,10 @@ Class(function() {
             var self = this;
             editor.onLoad(function() {
                 editor.loader.hide();
-                //console.error("dd")
             });
             editor.onCompile(function(source) {
                 assembler.assemble(source).then(function(res) {
-                    //decompile(res);
                     self.compiledBuffer = res.buffer;
-                    /*$.post(
-                        "bin/saveBin.php", { code: new StringView(self.compiledBuffer).toString() }
-                    );*/
                     editor.compileSuccess();
                 }, function(res) {
                     editor.compileError(res);
@@ -52,7 +46,7 @@ Class(function() {
             $(document).ready(function(){
                 var asm = new Assembler(parser);
                 asm.constructor();
-                var app = new App(asm, new WavesEditor, new FileSystem('http://localhost'), new VM);
+                var app = new App(asm, new WavesEditor, new FileSystem(), new VM);
                 app.run();
             });
         }
