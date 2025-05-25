@@ -42,42 +42,8 @@ Function.prototype.debounce = function (threshold, execAsap) {
     };
  
 }
-// Array.map polyfill
-/*
-if (Array.prototype.map === undefined) {
-  Array.prototype.map = function(fn) {
-    var rv = [];
-    
-    for(var i=0, l=this.length; i<l; i++)
-      rv.push(fn(this[i]));
-
-    return rv;
-  };
-}
-if (Uint8Array.prototype.map === undefined) {
-    Uint8Array.prototype.map = function(fn) {
-    var rv = [];
-    
-    for(var i=0, l=this.length; i<l; i++)
-      rv.push(fn(this[i]));
-
-    return rv;
-  };
-}
 
 
-// Array.filter polyfill
-if (Array.prototype.filter === undefined) {
-  Array.prototype.filter = function(fn) {
-    var rv = [];
-    
-    for(var i=0, l=this.length; i<l; i++)
-      if (fn(this[i])) rv.push(this[i]);
-
-    return rv;
-  };
-}
-*/
 var OP={
 	add:0,
 	sub:1,

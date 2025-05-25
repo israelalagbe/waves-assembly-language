@@ -5,9 +5,6 @@ WavesFile{
 	int1             constant_info[constant_count-1];
 	int2             routine_count;
 	int1             routine_info[routine_count-1];
-	//codes
-	//codes
-	//codes
 }
 
 

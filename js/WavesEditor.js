@@ -28,7 +28,6 @@
      onCompile: function(fn) {},
      onRun: function(fn) {},
      onLoad: function(fn) {
-         //document.getElementById('editor').style.fontSize='12px';
          this._events.bind('load', fn);
      }
  });
@@ -74,7 +73,6 @@
          this.$fontSelect.on('change',function(){
          	var $this=$(this);
             $('#appbar a,#appbar select,#editor').css('font-size',$this.val());
-         	//document.getElementById('').style.fontSize=
          });
          $('.themes-select').children().click(function(e){
          	e.preventDefault();
@@ -100,8 +98,6 @@
             e.preventDefault();
             self._editor.session.setValue("")
          });
-         //s.selection.addRange(new Range(1, 1, 30, 5))
-         
      },
      getContent: function() {
          return this._editor.session.getValue();
