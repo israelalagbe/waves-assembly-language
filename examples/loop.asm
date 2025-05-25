@@ -7,14 +7,12 @@ main:
     iconst r0 count
     iconst r1 stop
     iconst r2 increment
-    .loop: ;Local label
-    ;if count equals stop then goto .stop
-    if-eq r0 r1 .stop 
-    ;else
-    call printInt r0  ;print count
-    call newline   ;call newline function
-    add r0 r2 r0 ;count=count+increment
-    goto .loop   ;go back to .loop local label
+    .loop:
+        if-eq r0 r1 .stop  ; if count equals stop then goto .stop
+        call printInt r0
+        call newline
+        add r0 r2 r0
+        goto .loop
     
-    .stop: ;local label stop
-        return  ;Exit the main routine
+    .stop:
+        return

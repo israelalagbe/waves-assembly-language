@@ -3,11 +3,10 @@
     .string str "Your name is: "
 .end
 main:
-    get r0 prompt ;Get the address of the string prompt
-    call printStr r0 ;print the string at that address
-    call input ;accept user input
-    result r1 ;Move the address of user input stream to register 1 i.e result of function call
-    get r2 str ;get the address of str string
-    call printStr r2 ;print str string
-    call printStr r1 ;print the user input
-    
+    get r0 prompt         ; Load address of prompt string
+    call printStr r0      ; Print prompt
+    call input            ; Get user input
+    result r1             ; Store input address in r1
+    get r2 str            ; Load address of str string
+    call printStr r2      ; Print "Your name is: "
+    call printStr r1      ; Print user input
