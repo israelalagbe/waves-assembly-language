@@ -7,14 +7,7 @@ Click [here](https://israelalagbe.github.io/waves-assembly-language/) to try it 
 
 ## Overview
 
-The compiler interprets a custom assembly language, referred to as "Waves," and translates it into executable code. It is written in JavaScript and uses various libraries, including Jison parser, Metro UI, and Ace Editor, to offer an optimal user experience.
-
-### Features
-
-- **Syntax Highlighting**: Integrated with Ace Editor, providing real-time syntax highlighting.
-- **Custom Parsing**: Utilizing Jison parser to interpret the unique syntax of Waves.
-- **Modern UI**: Styled with Metro UI to offer an intuitive and aesthetically pleasing interface.
-- **Interactive Experience**: Compile and execute code directly from the browser.
+The compiler interprets a custom assembly language, referred to as "Waves," and translates it into executable code. It is written in JavaScript, allowing it to compile and run directly in the web browser.
 
 ### Screenshots
 ![Usage](https://github.com/user-attachments/assets/754cc596-7102-4342-a56d-66afc6680001)
@@ -31,7 +24,7 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
 ### Prerequisites
 
 - Web browser with JavaScript support
-- [VS Code Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or any local server
+- [Node.js](https://nodejs.org/) and npm (Node Package Manager)
 
 ### Running Locally
 
@@ -45,18 +38,23 @@ The compiler interprets a custom assembly language, referred to as "Waves," and 
    cd waves-assembly-language
    ```
 
-3. Open the project with Visual Studio Code.
+3. Install dependencies:
+   ```sh
+   npm install serve
+   ```
 
-4. Use the Live Server extension (or your preferred local server) to launch the project.
+4.  Run the project using serve:
+    ```sh
+    npm start
+    ```
+   or
+    ```sh
+    npx serve .
+    ```
 
-## Development
+5. Open the project with Visual Studio Code.
 
-The project makes extensive use of the following libraries and tools:
-
-- **JavaScript**: Core programming language
-- **Jison Parser**: For parsing custom assembly language syntax
-- **Metro UI**: For a responsive and modern interface
-- **Ace Editor**: For code editing and syntax highlighting
+6. Use the Live Server extension (or your preferred local server) to launch the project.
 
 ### Contributing
 
